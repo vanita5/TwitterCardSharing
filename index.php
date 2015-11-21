@@ -13,7 +13,7 @@ $img = IMAGE_DIR . $param;
 if (strlen(strstr($_SERVER['HTTP_USER_AGENT'], "Twitterbot")) <= 0) {
     $data = file_get_contents($img);
 
-    header('Content-type: image/png');
+    header('Content-type: image/'.pathinfo($img, PATHINFO_EXTENSION));
     die($data);
 }
 
